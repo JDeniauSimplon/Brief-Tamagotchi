@@ -1,0 +1,880 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: monospace;
+    text-decoration: none;
+}
+
+$couleurs: (
+    primary: rgb(255, 252, 247),
+
+);
+$primary-color: map-get($couleurs, primary);
+
+// Keyframes
+
+@keyframes moveLeftRight {
+    0% {
+        transform: translateX(0) scaleX(1);
+    }
+
+    49.99% {
+        transform: translateX(-50px) scaleX(1);
+    }
+
+    50% {
+        transform: translateX(0) scaleX(-1);
+    }
+
+    99.99% {
+        transform: translateX(50px) scaleX(-1);
+    }
+
+    100% {
+        transform: translateX(0) scaleX(1);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes hop {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-5px);
+    }
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(2deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-2deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+// Element de la page d'accueil 
+
+#homePage {
+    background-image: url(/assets/images/bg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.pseudoButton {
+    width: 340px;
+    height: 100px;
+    background: #AFAFAF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid $primary-color;
+
+    :hover {
+        font-size: 29px;
+    }
+}
+
+.inputPseudo {
+    width: 340px;
+    height: 100px;
+    background: #AFAFAF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    text-align: center;
+    outline: none;
+    border: none;
+    border: 1px solid $primary-color;
+    font-weight: bold;
+}
+
+#commandInput {
+    display: flex;
+    height: 70%;
+    background-color: $primary-color;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 1.5px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    width: 100%;
+
+    #commandInput:focus {
+        outline: none;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        width: 100%;
+        height: 110px;
+    }
+}
+
+.petType {
+    width: 340px;
+    height: 60px;
+    background: #AFAFAF;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid $primary-color;
+}
+
+.startButton {
+    width: 340px;
+    height: 100px;
+    background: #AFAFAF;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 26px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid $primary-color;
+
+    p {
+        color: #000000;
+    }
+
+    p:hover {
+        font-size: 30px;
+    }
+}
+
+.dogCharacter {
+    background-color: #AFAFAF;
+    width: 160px;
+    height: 360px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-style: italic;
+    font-weight: bold;
+    border: 1px solid $primary-color;
+
+    h2 {
+        color: #000000;
+        text-align: center;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        width: 282px;
+        height: 427px;
+        font-size: 16px;
+        h2 {
+            position: fixed;
+            margin-bottom: 300px;
+            font-size: 20px;
+            
+        }
+    }
+}
+
+.catCharacter {
+    background-color: #AFAFAF;
+    width: 160px;
+    height: 360px;
+    border-radius: 20px;
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-style: italic;
+    font-weight: bold;
+    border: 1px solid $primary-color;
+
+    h2 {
+        color: #000000;
+        text-align: center;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        width: 282px;
+        height: 427px;
+        font-size: 16px;
+        h2 {
+            position: fixed;
+            margin-bottom: 300px;
+            font-size: 20px;
+            
+        }
+    }
+}
+
+#characterSelect {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    @media only screen and (min-width: 1200px) {
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+    }
+}
+
+.dogOrCat {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    @media only screen and (min-width: 1200px) {
+        gap: 30px;
+    }
+}
+
+.homeSpriteDog {
+    background-image: url(/assets/images/annoyingdog.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 80px;
+
+    @media only screen and (min-width: 1200px) {
+        width: 200px;
+        height: 160px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .homeSpriteDog:hover {
+        width: 240px;
+        height: 192px;
+        animation: tilt-shaking 2s ease-in;
+        animation-iteration-count: infinite;
+    }
+}
+
+// Element de la page de jeu
+
+.returnButton {
+    width: 90px;
+    height: 41px;
+    background: #AFAFAF;
+    border-radius: 15px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid rgb(255, 252, 247);
+    text-decoration: none;
+    color: black;
+    margin-left: 256px;
+
+    @media only screen and (min-width: 730px) {
+        margin-left: 86.7%;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        margin-left: 93%;
+    }
+}
+
+#tamagotchi {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.spriteDog {
+    background-image: url(/assets/images/annoyingdog.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 160px;
+}
+
+.spriteCat {
+    background-image: url(/assets/images/boringcat.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 160px;
+}
+
+.homeSpriteCat {
+    background-image: url(/assets/images/boringcat.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 80px;
+
+    @media only screen and (min-width: 1200px) {
+        width: 200px;
+        height: 160px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .homeSpriteCat:hover {
+        width: 240px;
+        height: 192px;
+        animation: tilt-shaking 2s ease-in;
+        animation-iteration-count: infinite;
+    }
+}
+
+.percentage-display {
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    margin-left: 195px;
+}
+
+@media only screen and (min-width: 1200px) {
+    .percentage-display {
+        font-size: 20px;
+        font-weight: bold;
+        display: flex;
+        margin-left: 435px;
+    }
+}
+
+#tamagotchiScreen {
+    background-image: url(/assets/images/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 340px;
+    height: 300px;
+    border-radius: 15px;
+    border: 1px solid $primary-color;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    backdrop-filter: brightness(50%);
+
+    .spriteCat {
+        margin-bottom: 30px;
+        animation: hop 0.6s infinite ease-in-out;
+        position: fixed;
+
+        @media only screen and (min-width: 730px) {
+            margin-bottom: 60px;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            margin-bottom: 8%;
+        }
+    }
+
+    .spriteDog {
+        margin-bottom: 30px;
+        animation: moveLeftRight 5s infinite ease-in-out;
+        position: fixed;
+
+        @media only screen and (min-width: 730px) {
+            margin-bottom: 60px;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            margin-bottom: 8%;
+        }
+    }
+
+    @media only screen and (min-width: 730px) {
+        width: 690px;
+        height: 70%;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        height: 70%;
+        width: 90%;
+        background-position: bottom;
+    }
+
+    .spriteDogDead {
+        background-image: url(/assets/images/deadannoyingdog.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 160px;
+        margin-bottom: 30px;
+        animation: disappear 2s forwards;
+        position: fixed;
+
+        @media only screen and (min-width: 730px) {
+            margin-bottom: 60px;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            margin-bottom: 8%;
+            margin-left: 8%;
+        }
+    }
+
+    .spriteCatDead {
+        background-image: url(/assets/images/deadboringcat.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 160px;
+        margin-bottom: 30px;
+        animation: disappear 2s forwards;
+        position: fixed;
+
+        @media only screen and (min-width: 730px) {
+            margin-bottom: 60px;
+        }
+
+        @media only screen and (min-width: 1200px) {
+            margin-bottom: 8%;
+        }
+    }
+}
+
+.console {
+    background-color: rgb(87, 87, 87);
+    width: 340px;
+    height: 150px;
+    border-radius: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+    border: 1px solid $primary-color;
+
+    ul>li {
+        margin: 5px;
+        font-weight: bold;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+    }
+}
+
+.consoleAndCharacterBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    @media only screen and (min-width: 730px) {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        width: 692px;
+        justify-content: center;
+    }
+
+    @media only screen and (min-width: 1200px) {
+        flex-direction: row;
+        display: flex;
+        align-items: center;
+        width: 90%;
+        justify-content: center;
+        gap: 50px;
+    }
+}
+
+.characterBar {
+    display: flex;
+    width: 350px;
+    height: 155px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media only screen and (min-width: 1200px) {
+        width: 640px;
+    }
+}
+
+#healthBar {
+    display: flex;
+    flex-direction: row;
+    width: 340px;
+    height: 160px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (min-width: 1200px) {
+
+        width: 600px;
+    }
+
+    #circleHealthLogo {
+        display: flex;
+        background-color: #991A1A;
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $primary-color;
+    }
+
+    #healthLogo {
+        background-image: url(/assets/images/coeur_plein.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 25px;
+        width: 25px;
+        margin-right: 1px;
+    }
+
+    #healthProgressBar {
+        background-color: $primary-color;
+        width: 100%;
+        max-width: 240px;
+        height: 30px;
+        border-radius: 4px;
+        border: 1px solid $primary-color;
+
+        @media only screen and (min-width: 1200px) {
+            max-width: 480px;
+        }
+    }
+
+    #healthProgressBarFull {
+        background: repeating-linear-gradient(-45deg, #991A1A, #991A1A 5px, #991a1aba 5px, #991a1aba 10px);
+        max-width: 240px;
+        height: 30px;
+        border-radius: 4px;
+        display: flex;
+
+        @media only screen and (min-width: 1200px) {
+            max-width: 100%;
+        }
+    }
+
+    #healthPlusButton {
+        display: flex;
+        background-color: #991a1a;
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        align-items: center;
+        justify-content: center;
+        background-image: url(/assets/images/boutonplus.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid $primary-color;
+    }
+
+    #healthPlusButton:hover {
+        background-color: #991a1aba;
+    }
+}
+
+#thirstBar {
+    display: flex;
+    flex-direction: row;
+    width: 340px;
+    height: 160px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (min-width: 1200px) {
+        width: 600px;
+    }
+
+    #circleThirstLogo {
+        display: flex;
+        background-color: #0016E0;
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $primary-color;
+    }
+
+    #thirstLogo {
+        background-image: url(/assets/images/eau.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 60px;
+        width: 60px;
+    }
+
+    #thirstProgressBar {
+        background-color: $primary-color;
+        width: 100%;
+        max-width: 240px;
+        height: 30px;
+        border-radius: 4px;
+        border-radius: 4px;
+        border: 1px solid $primary-color;
+
+        @media only screen and (min-width: 1200px) {
+            max-width: 480px;
+        }
+    }
+
+    #thirstProgressBarFull {
+        background: repeating-linear-gradient(-45deg, #0016E0, #0016E0 5px, #0016e0b1 5px, #0016e0a7 10px);
+        max-width: 240px;
+        height: 30px;
+        border-radius: 4px;
+
+        @media only screen and (min-width: 1200px) {
+            max-width: 480px;
+        }
+
+    }
+
+    #thirstPlusButton {
+        display: flex;
+        background-color: #0016E0;
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        align-items: center;
+        justify-content: center;
+        background-image: url(/assets/images/boutonplus.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid $primary-color;
+    }
+
+    #thirstPlusButton:hover {
+        background-color: #0016e0b1;
+    }
+}
+
+#meatBar {
+    display: flex;
+    flex-direction: row;
+    width: 340px;
+    height: 160px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (min-width: 1200px) {
+        width: 600px;
+    }
+
+    #circleMeatLogo {
+        display: flex;
+        background-color: #C04B26;
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $primary-color;
+    }
+
+    #meatLogo {
+        background-image: url(/assets/images/viande.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 35px;
+        width: 35px;
+    }
+
+    #meatProgressBar {
+        background-color: $primary-color;
+        width: 100%;
+        max-width: 240px;
+        height: 30px;
+        border-radius: 4px;
+        border: 1px solid $primary-color;
+
+        @media only screen and (min-width: 1200px) {
+            max-width: 480px;
+        }
+    }
+
+    #meatProgressBarFull {
+        background: repeating-linear-gradient(-45deg, #C04B26, #C04B26 5px, #c04a26ac 5px, #c04a26ac 10px);
+        max-width: 240px;
+        height: 30px;
+        border-radius: 4px;
+
+        @media only screen and (min-width: 1200px) {
+            max-width: 480px;
+        }
+    }
+
+    #meatPlusButton {
+        display: flex;
+        background-color: #C04B26;
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        align-items: center;
+        justify-content: center;
+        background-image: url(/assets/images/boutonplus.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid $primary-color;
+    }
+
+    #meatPlusButton:hover {
+        background-color: #c04a26ac;
+    }
+}
+
+#fishBar {
+    display: flex;
+    flex-direction: row;
+    width: 340px;
+    height: 160px;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (min-width: 1200px) {
+        width: 600px;
+    }
+
+    #circleFishLogo {
+        display: flex;
+        background-color: #26c0bd;
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid $primary-color;
+    }
+
+    #fishLogo {
+        background-image: url(/assets/images/poisson.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 50px;
+        width: 50px;
+    }
+
+    #fishProgressBar {
+        background-color: $primary-color;
+        width: 100%;
+        max-width: 240px;
+        height: 30px;
+        border-radius: 4px;
+        border: 1px solid $primary-color;
+
+        @media only screen and (min-width: 1200px) {
+            max-width: 480px;
+        }
+    }
+
+    #fishProgressBarFull {
+        background: repeating-linear-gradient(-45deg, #26c0bd, #26c0bd 5px, #56edeaec 5px, #56edeaec 10px);
+        max-width: 240px;
+        height: 30px;
+        border-radius: 4px;
+
+        @media only screen and (min-width: 1200px) {
+            max-width: 480px;
+        }
+    }
+
+    #fishPlusButton {
+        display: flex;
+        background-color: #26c0bd;
+        width: 40px;
+        height: 40px;
+        border-radius: 80px;
+        align-items: center;
+        justify-content: center;
+        background-image: url(/assets/images/boutonplus.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        border: 1px solid $primary-color;
+    }
+
+    #fishPlusButton:hover {
+        background-color: #26c0bdc1;
+    }
+}

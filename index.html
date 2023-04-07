@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tamagotchi</title>
+  <link rel="stylesheet" href="./assets/scss/style.scss">
+</head>
+
+<body>
+
+  <!--Page d'accueil du tamagotchi-->
+
+  <div id="homePage">
+
+    <div id="characterSelect">
+      <div class="pseudoButton">
+        <p>Your pet name :</p>
+      </div>
+      <div class="petType">
+        <p>choose your pet type</p>
+      </div>
+      <div class="dogOrCat">
+        <a href="#" class="dogCharacter">
+          <h2>The Annoying Dog</h2>
+          <div class="homeSpriteDog"></div>
+        </a>
+        <a href="#" class="catCharacter">
+          <h2>The Boring Cat</h2>
+          <div class="homeSpriteCat"></div>
+        </a>
+      </div>
+      <a href="#" class="startButton">
+        <p>Start</p>
+      </a>
+    </div>
+  </div>
+
+  <!--Page de jeu du tamagotchi-->
+
+  <div id="tamagotchi">
+    <div id="tamagotchiScreen">
+      <a href="#" class="returnButton">
+        <p>Return</p>
+      </a>
+    </div>
+
+    <div class="consoleAndCharacterBar">
+
+      <div class="console">
+        <ul>
+          <li>Dog commands : health - thirst - meat</li>
+          <li>Cat commands : health - thirst - fish</li>
+        </ul>
+        <input type="text" id="commandInput" placeholder="Enter your command there">
+      </div>
+
+      <div class="characterBar">
+
+        <div id="healthBar">
+          <div id="circleHealthLogo">
+            <div id="healthLogo"></div>
+          </div>
+          <div id="healthProgressBar">
+            <div id="healthProgressBarFull"></div>
+          </div>
+          <div id="healthPlusButton"></div>
+        </div>
+
+        <div id="thirstBar">
+          <div id="circleThirstLogo">
+            <div id="thirstLogo"></div>
+          </div>
+          <div id="thirstProgressBar">
+            <div id="thirstProgressBarFull"></div>
+          </div>
+          <div id="thirstPlusButton"></div>
+        </div>
+
+        <div id="meatBar">
+          <div id="circleMeatLogo">
+            <div id="meatLogo"></div>
+          </div>
+          <div id="meatProgressBar">
+            <div id="meatProgressBarFull"></div>
+          </div>
+          <div id="meatPlusButton"></div>
+        </div>
+
+        <div id="fishBar">
+          <div id="circleFishLogo">
+            <div id="fishLogo"></div>
+          </div>
+          <div id="fishProgressBar">
+            <div id="fishProgressBarFull"></div>
+          </div>
+          <div id="fishPlusButton"></div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script type="module" src="./function.ts"></script>
+  <script type="module" src="./script.ts"></script>
+  
+</body>
+
+</html>
