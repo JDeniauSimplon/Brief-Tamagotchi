@@ -1,9 +1,18 @@
-- Le quiz que vous avez développé a convaincu votre responsable technique, il souhaite vous confier un projet dont votre agence n’a pas l’habitude. Dans le cadre du salon du jeu vidéo rétro, la marque Bandai souhaite faire un clin d'oeil à l’un de ses succès des années 90 : le Tamagochi !
+# Projet Tamagochi 
+Ce projet a été développé pour répondre à la demande de Bandai, qui souhaite présenter une version modernisée de son célèbre Tamagochi des années 90 lors du salon du jeu vidéo rétro.
 
-- Bandai a fait appel à de nombreuses agences de développement pour qu’elles créer des Tamagochi revisités, tous les projets seront jouables depuis le stand de Bandai lors du salon.
+## Objectifs du projet
+L'objectif est de créer un jeu Tamagochi revisité qui sera jouable depuis le stand de Bandai lors du salon. Les contraintes techniques et fonctionnelles fournies par Bandai doivent être respectées.
 
-- Vous devrez une nouvelle fois faire appel à votre créativité car vous êtes libres dans l’interprétation du Tamagochi, néanmoins vous devrez satisfaire les contraintes techniques et fonctionnelles fournies par Bandai dans le cahier des charges.
+## Cahier des charges
+Le cahier des charges fourni par Bandai inclut les éléments suivants :
 
-- Ce projet étant exigeant votre responsable technique vous conseille de mettre en place un Trello comme vous avez pu le faire lors du quiz.
+- Le jeu doit être jouable depuis un ordinateur.
+- Le joueur doit pouvoir interagir avec le Tamagochi en utilisant la souris et le clavier.
+- Le Tamagochi doit avoir des besoins à satisfaire.
+- Le joueur doit être capable de satisfaire les besoins du Tamagotchi
+- Le Tamagochi doit avoir des jauges qui representent les besoins.
 
-- Vous devrez lui présenter les maquettes du projet ainsi que votre Trello. Après validation vous pourrez commencer le développement à proprement parler.
+## Outils utilisés
+Pour gérer ce projet, nous avons utilisé Trello, un outil de gestion de projet en ligne. Nous avons également créé des maquettes pour visualiser le design du jeu.
+
