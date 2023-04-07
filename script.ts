@@ -137,45 +137,44 @@ function removeClasses() {
 
 function startGame() {
   if (homePage && pageTamagotchi && meatBar && fishBar && startButton) {
-    startButton.disabled = true; // désactive le bouton Commencer par défaut
     startButton.addEventListener('click', function () {
-      myCat.health = 100;
-      myCat.thirst = 100;
-      myCat.fish = 100;
-      myDog.health = 100;
-      myDog.thirst = 100;
-      myDog.meat = 100;
-      intervalDecrease = setInterval(decreaseJauges, 1000);
-      homePage.style.display = 'none';
-      pageTamagotchi.style.display = 'flex';
-      reloadButton();
-      reloadCommandInput();
-      if (isCatSelected) {
-        setInterval(checkJaugesCat, 100);
-        fishBar.style.display = 'flex';
-        meatBar.style.display = 'none';
-        if (healthBarFull && thirstBarFull && fishBarFull) {
-          healthBarFull.innerHTML = `<span class="percentage-display">${myCat.health}%</span>`;
-          thirstBarFull.innerHTML = `<span class="percentage-display">${myCat.thirst}%</span>`;
-          fishBarFull.innerHTML = `<span class="percentage-display">${myCat.fish}%</span>`;
+      if (isDogSelected || isCatSelected) {
+        myCat.health = 100;
+        myCat.thirst = 100;
+        myCat.fish = 100;
+        myDog.health = 100;
+        myDog.thirst = 100;
+        myDog.meat = 100;
+        intervalDecrease = setInterval(decreaseJauges, 1000);
+        homePage.style.display = 'none';
+        pageTamagotchi.style.display = 'flex';
+        reloadButton();
+        reloadCommandInput();
+        if (isCatSelected) {
+          setInterval(checkJaugesCat, 100);
+          fishBar.style.display = 'flex';
+          meatBar.style.display = 'none';
+          if (healthBarFull && thirstBarFull && fishBarFull) {
+            healthBarFull.innerHTML = `<span class="percentage-display">${myCat.health}%</span>`;
+            thirstBarFull.innerHTML = `<span class="percentage-display">${myCat.thirst}%</span>`;
+            fishBarFull.innerHTML = `<span class="percentage-display">${myCat.fish}%</span>`;
+          }
         }
-      }
 
-      else if (isDogSelected) {
-        setInterval(checkJaugesDog, 100);
-        fishBar.style.display = 'none';
-        meatBar.style.display = 'flex';
-        if (healthBarFull && thirstBarFull && meatBarFull) {
-          healthBarFull.innerHTML = `<span class="percentage-display">${myDog.health}%</span>`;
-          thirstBarFull.innerHTML = `<span class="percentage-display">${myDog.thirst}%</span>`;
-          meatBarFull.innerHTML = `<span class="percentage-display">${myDog.meat}%</span>`;
+        else if (isDogSelected) {
+          setInterval(checkJaugesDog, 100);
+          fishBar.style.display = 'none';
+          meatBar.style.display = 'flex';
+          if (healthBarFull && thirstBarFull && meatBarFull) {
+            healthBarFull.innerHTML = `<span class="percentage-display">${myDog.health}%</span>`;
+            thirstBarFull.innerHTML = `<span class="percentage-display">${myDog.thirst}%</span>`;
+            meatBarFull.innerHTML = `<span class="percentage-display">${myDog.meat}%</span>`;
+          }
         }
       }
     });
   }
 }
-
-// Execute la fonction pour demarrer le jeu
 
 startGame();
 
