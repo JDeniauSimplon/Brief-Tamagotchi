@@ -13,6 +13,5 @@ Le cahier des charges fourni par Bandai inclut les éléments suivants :
 - Le joueur doit être capable de satisfaire les besoins du Tamagotchi
 - Le Tamagochi doit avoir des jauges qui representent les besoins.
 
-### Outils utilisés
-Pour gérer ce projet, nous avons utilisé Trello, un outil de gestion de projet en ligne. Nous avons également créé des maquettes pour visualiser le design du jeu.
+
 
