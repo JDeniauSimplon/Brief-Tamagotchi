@@ -57,7 +57,7 @@ export function reloadCommandInput() { if (commandInput) {
 
 // Fonction pour executer la commande si la string est correcte
 
-export function executeCommand(command) {
+export function executeCommand(command : string) {
   if (command === 'health') {
     onHealthPlusClick();
   } else if (command === 'thirst') {
