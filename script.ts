@@ -116,7 +116,7 @@ if (returnButton && pageTamagotchi && homePage) {
 
 // Fonction pour pour valider la commande dans la console
 
-export function handleCommandInput(event : MouseEvent) {
+export function handleCommandInput(event : KeyboardEvent) {
   if (event.key === 'Enter' && commandInput) {
     executeCommand(commandInput.value.toLowerCase());
   }
