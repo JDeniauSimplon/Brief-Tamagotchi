@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc && parcel build index.html --dist-dir dist"
-  },
+  "build": "npm run tsc && npm run parcel",
+  "tsc": "tsc",
+  "parcel": "parcel build index.html --dist-dir dist"
+},
   "author": "",
   "license": "ISC",
   "type": "module",
